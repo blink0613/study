@@ -1,6 +1,6 @@
 package interview;
 
-public class Tesla {
+public class Tesla220524 {
 
     /**
      * 2022.05.24 特斯拉笔试
