@@ -33,6 +33,7 @@ public class Tesla {
                 number = number/2;
             }else{
                 number--;
+
             }
             result++;
         }
