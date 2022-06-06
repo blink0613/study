@@ -1,30 +1,22 @@
 public class interview {
     public static void main(String[] args) {
-        String s = "011100";
-        solution(s);
+        System.out.println(waysOfStairs(4));
     }
-    public static int solution(String S) {
-        // write your code in Java SE 8
-        //二进制转十进制
-        int i = S.length() - 1;
-        long number = 0;
-        while(i >=0){
-            if(S.charAt(i) == '1'){
-                System.out.println(i);
-                number += Math.pow(2,S.length() - i - 1);
-            }
-            i--;
+    /**
+     * 爬楼梯，有n节楼梯，你每次只能走1，2，3节，有多少种办法保证爬上楼梯？
+     */
+    public static int waysOfStairs(int n){
+        if(n <=3){return n;}
+        int[] arr = new int[n];
+        arr[0] = 1;
+        arr[1] = 2;
+        arr[2] = 3;
+        for(int i = 3; i < n;i++){
+            arr[i] = arr[i-2] + arr[i-1] + arr[i-3];
         }
-        System.out.println(number);
-        int result = 0;
-        while(number != 0){
-            if(number % 2 == 0){
-                number = number/2;
-            }else{
-                number--;
-            }
-            result++;
-        }
-        return result;
+
+        return arr[n-1];
+
     }
+
 }
